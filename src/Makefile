@@ -9,7 +9,7 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 $(ODIR)/%.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-bmenu: $(OBJ)
+HandyDev: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
