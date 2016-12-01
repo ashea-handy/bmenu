@@ -13,4 +13,4 @@ bmenu: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
-	rm -f $(ODIR)/*.o bmenu
+	rm -f $(ODIR)/*.o HandyDev 

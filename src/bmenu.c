@@ -16,9 +16,9 @@
 #include <unistd.h>          // execl(), getopt()
 #include <stdbool.h>         // bool, true, false
 
-#define VERSION              "0.1.1"
+#define VERSION              "0.1.2"
 
-#define MENU_TITLE           "Select Option"
+#define MENU_TITLE           "Handy Development Environment"
 #define MENU_CONFIG          ".bmenu"
 
 #define MAX_MENU_OPTIONS     10
@@ -171,7 +171,7 @@ int loadMenuConfig(char **menu, char **command, char *config) {
 	// the full path should already be provided.
 	if (strcmp(config, MENU_CONFIG) == 0) {
 
-		char *homeDir = getenv("HOME");
+		char *homeDir = getenv("PWD");
 
 		if (homeDir == NULL)
 			return 1;
@@ -194,7 +194,7 @@ int loadMenuConfig(char **menu, char **command, char *config) {
 			return 3;
 
 		strcpy(menuConfigPath, config);
-	}
+	}   
 
 	// Open file
 	FILE *menuConfig = fopen(menuConfigPath, "r");
@@ -287,7 +287,7 @@ void windowHeader(int windowCols) {
 	int col, textRow = 0, barRow = 1;
 
 	attron(A_BOLD);
-	mvprintw(textRow, 1, "%s", "B-MENU v" VERSION);
+	mvprintw(textRow, 1, "%s", "Handy Development Environment Helper v" VERSION);
 	attroff(A_BOLD);
 
 	move(1,0);
@@ -313,10 +313,10 @@ void decorateMenu(char **menu, char *title, int windowRows, int windowCols) {
 	borderCols = getMenuCols(menu) + 8;
 	borderRows = getMenuRows(menu) + 4;
 
-	// Minimum border width is 25 cols.
+	// Minimum border width is 29 cols.
 	// Need at least this much for select/exit options.
-	if (borderCols < 25)
-		borderCols = 25;
+	if (borderCols < 29)
+		borderCols = 29;
 
 	// Determining starting row and column for border (inner)
 	startCol = (windowCols / 2) - (borderCols / 2);
