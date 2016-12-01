@@ -3,6 +3,12 @@ B-Menu
 
 ![Screenshot](http://i.imgur.com/QV5Ra8V.png)
 
+What is this fork of B-Menu?
+---------------
+
+This simple fork of B-Menu is intended to read from configuration files 
+found in the Current Working Directory, as opposed to the home folder.
+
 What is B-Menu?
 ---------------
 
